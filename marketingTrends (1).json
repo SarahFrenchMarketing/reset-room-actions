@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Marketing Trends",
+    "version": "1.0.0",
+    "description": "Returns the latest digital marketing trends relevant to affiliate marketers and online creators."
+  },
+  "servers": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "paths": {
+    "/get-trends": {
+      "get": {
+        "operationId": "getTrends",
+        "summary": "Get Current Digital Marketing Trends",
+        "responses": {
+          "200": {
+            "description": "A list of current digital marketing trends",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrendsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TrendsResponse": {
+        "type": "object",
+        "properties": {
+          "human_first": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "summary": { "type": "string" }
+            }
+          },
+          "ai_automation": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "summary": { "type": "string" }
+            }
+          },
+          "faceless_reels": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "summary": { "type": "string" }
+            }
+          },
+          "creator_strategies": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "summary": { "type": "string" }
+            }
+          },
+          "platform_updates": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "summary": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

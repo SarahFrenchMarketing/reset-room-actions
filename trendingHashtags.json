@@ -1,0 +1,62 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Trending Hashtags + Captions",
+    "version": "1.0.0",
+    "description": "Returns a caption and 20 trending hashtags for your niche and audience."
+  },
+  "servers": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "paths": {
+    "/generate": {
+      "get": {
+        "operationId": "generateHashtags",
+        "summary": "Get a caption and 20 trending hashtags",
+        "parameters": [
+          {
+            "name": "topic",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The theme, vibe, or content topic (e.g. 'confidence for women in their 20s')"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Caption and hashtags",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HashtagResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HashtagResponse": {
+        "type": "object",
+        "properties": {
+          "caption": {
+            "type": "string"
+          },
+          "hashtags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
