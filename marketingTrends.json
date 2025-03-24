@@ -1,22 +1,62 @@
 {
-  "content_trends": {
-    "title": "Human-First, Relatable Content is Winning",
-    "summary": "In 2025, polished 'marketing-speak' is underperforming. Creators and brands who share raw, vulnerable, and behind-the-scenes content are building more trust and engagement."
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Marketing Trends",
+    "version": "1.0.0",
+    "description": "Returns the latest digital marketing trends relevant to affiliate marketers and online creators."
   },
-  "ai_automation": {
-    "title": "AI-Assisted Creation (With a Personal Touch)",
-    "summary": "Digital marketers are embracing GPT tools to help them brainstorm and plan \u2014 but customisation is key. Audiences want YOUR voice, not just AI speed."
+  "servers": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "paths": {
+    "/get-trends": {
+      "get": {
+        "operationId": "getTrends",
+        "summary": "Get Current Digital Marketing Trends",
+        "responses": {
+          "200": {
+            "description": "A list of current digital marketing trends",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrendsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   },
-  "faceless_reels": {
-    "title": "Faceless Reels with Strong Hooks & Aesthetics",
-    "summary": "Reels that rely on aesthetic B-roll, powerful captions, and trending audio continue to dominate \u2014 especially for faceless creators who use storytelling and vibe over visuals."
-  },
-  "creator_strategies": {
-    "title": "Micro-Education & Story-Based Marketing",
-    "summary": "Short, punchy educational content mixed with personal experiences is converting best. Think: '1 tip per slide' with an emotional arc."
-  },
-  "platform_updates": {
-    "title": "Instagram & TikTok favour retention, not reach",
-    "summary": "Both platforms are rewarding content that keeps people watching longer \u2014 not necessarily content that goes viral quickly. Hooks and pacing matter more than ever."
+  "components": {
+    "schemas": {
+      "TrendsResponse": {
+        "type": "object",
+        "properties": {
+          "human_first": {
+            "title": "Human-First, Relatable Content Is Winning",
+            "summary": "In 2025, polished 'marketing-speak' is underperforming. Creators and brands who share raw, vulnerable, and behind-the-scenes content are building more trust and engagement."
+          },
+          "ai_automation": {
+            "title": "AI-Assisted Creation (With a Personal Touch)",
+            "summary": "Digital marketers are embracing GPT tools to help them brainstorm and plan — but customisation is key. Audiences want YOUR voice, not just AI speed."
+          },
+          "faceless_reels": {
+            "title": "Faceless Reels with Strong Hooks & Aesthetics",
+            "summary": "Reels that rely on aesthetic B-roll, powerful captions, and trending audio continue to dominate — especially for faceless creators who use storytelling and vibe over visuals."
+          },
+          "creator_strategies": {
+            "title": "Micro-Education & Story-Based Marketing",
+            "summary": "Short, punchy educational content mixed with personal experiences is converting best. Think: '1 tip per slide' with an emotional arc."
+          },
+          "platform_updates": {
+            "title": "Instagram & TikTok favour retention, not reach",
+            "summary": "Both platforms are rewarding content that keeps people watching longer — not necessarily content that goes viral quickly. Hooks and pacing matter more than ever."
+          }
+        }
+      }
+    }
   }
 }
